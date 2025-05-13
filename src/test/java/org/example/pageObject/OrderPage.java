@@ -1,4 +1,4 @@
-package org.example;
+package org.example.pageObject;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -123,7 +123,6 @@ public class OrderPage {
     // Метод для проверки открытия страницы
     public void isPageOpen(String headerText, String text) {
         Assert.assertEquals(headerText, text);
-        // System.out.println("headerText, text: " + headerText + " " + text);
     }
 }
 
