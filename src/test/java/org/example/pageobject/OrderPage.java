@@ -1,4 +1,4 @@
-package org.example.pageObject;
+package org.example.pageobject;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -84,9 +84,6 @@ public class OrderPage {
     // Метод для ввода: поля Срок аренды
     public void setRentalPeriod(String rentalPeriod) {
         driver.findElement(rentsDays).click();
-        //ОЖИДАНИЕ
-        //  new WebDriverWait(driver, Duration.ofSeconds(3))
-        //           .until(ExpectedConditions.visibilityOfElementLocated(rentsDays));
         driver.findElement(By.xpath(".//div[text()='" + rentalPeriod + "']")).click();
     }
 

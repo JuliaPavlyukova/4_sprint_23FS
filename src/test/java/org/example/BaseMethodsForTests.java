@@ -18,12 +18,13 @@ public class BaseMethodsForTests {
     @Before
     public void startUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
 
 //        FirefoxOptions options = new FirefoxOptions();
 //        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
 //        driver = new FirefoxDriver(options);
+
         driver.get(testURL);                                                  //получение ссылки на страницу входа из файла настроек
 //
         driver.manage().window().maximize();                                //окно разворачивается на полный экран

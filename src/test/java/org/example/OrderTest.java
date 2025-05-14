@@ -1,7 +1,8 @@
 package org.example;
 
-import org.example.pageObject.HomePage;
-import org.example.pageObject.OrderPage;
+import org.example.pageobject.HomePage;
+import org.example.pageobject.OrderPage;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static org.example.constants.Constants.*;
+import static org.junit.Assert.assertEquals;
 
 
 @RunWith(Parameterized.class)
@@ -76,8 +78,8 @@ public class OrderTest extends BaseMethodsForTests {
         objOrderPage.setComment(comment);
         objOrderPage.clickOrderCreateButton();
         objOrderPage.clickOrderConfirmButton();
-        objOrderPage.getConfirmHeader();
-        objOrderPage.isPageOpen(objOrderPage.getConfirmHeader(), VIEW_STATUS);
+        String headerText =  objOrderPage.getConfirmHeader();
+        Assert.assertEquals(VIEW_STATUS, headerText);
     }
 }
 
